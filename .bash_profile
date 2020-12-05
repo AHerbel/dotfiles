@@ -11,8 +11,8 @@ if type _git &> /dev/null; then
 	complete -o default -o nospace -F _git g;
 fi;
 
-PATH=$PATH:/Users/augustoherbel/Library/Android/sdk/emulator
-PATH=$PATH:/Users/augustoherbel/Library/Android/sdk/tools
+PATH=$PATH:$HOME/Library/Android/sdk/emulator
+PATH=$PATH:$HOME/Library/Android/sdk/tools
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
